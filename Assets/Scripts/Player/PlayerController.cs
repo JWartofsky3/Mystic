@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
     public Camera cam;
     Rigidbody playerRigidbody;
     CapsuleCollider playerCollider;
+    Animator playerAnim;
 
     private bool isTargeting = false;
     private bool grounded = false;
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
         playerCollider = GetComponent<CapsuleCollider>();
         playerRigidbody = GetComponent<Rigidbody>();
+        playerAnim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -48,10 +50,10 @@ public class PlayerController : MonoBehaviour {
 
         //Calculate movement and move
         Vector3 movement = forward * v + right * h;
+        playerAnim.SetFloat("Speed", movement.magnitude);
         movement = movement * walkSpeed * Time.deltaTime;
 
-        playerRigidbody.MovePosition(transform.position + movement);
-        
+        //playerRigidbody.MovePosition(transform.position + movement);
         if (h > 0.1f || h < -0.1f || v > 0.1 || v < -0.1) {
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(movement), Time.deltaTime * 10f);
         }
@@ -62,13 +64,15 @@ public class PlayerController : MonoBehaviour {
     {
         if (j > 0 && grounded)
         {
-            playerRigidbody.velocity += new Vector3(0, 4f, 0);
+            playerRigidbody.velocity += new Vector3(0, 1f, 0);
+            playerAnim.SetTrigger("Jump");
         }
     }
 
     private bool isGrounded()
     {
-        grounded = Physics.Raycast(transform.position, -Vector3.up, playerCollider.bounds.extents.y + 0.2f);
+        //grounded = Physics.Raycast(transform.position, -Vector3.up, playerCollider.bounds.extents.y + playerCollider.center.y + 0.2f);
+        grounded = Physics.Raycast(transform.position + playerCollider.center, -Vector3.up, playerCollider.bounds.extents.y + 0.2f);
         return grounded;
     }
 
