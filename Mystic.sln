@@ -1,11 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mystic.Plugins", "Mystic.Plugins.csproj", "{A7D9B9D9-6755-D184-BDBC-D9DB664068F1}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mystic", "Mystic.csproj", "{7D4C2A91-3689-CC04-4D4D-62763071BE7A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mystic.Editor.Plugins", "Mystic.Editor.Plugins.csproj", "{ADD49ED3-2B1D-E05F-EFB7-C3E4A9BDA5AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,18 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A7D9B9D9-6755-D184-BDBC-D9DB664068F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A7D9B9D9-6755-D184-BDBC-D9DB664068F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A7D9B9D9-6755-D184-BDBC-D9DB664068F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A7D9B9D9-6755-D184-BDBC-D9DB664068F1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7D4C2A91-3689-CC04-4D4D-62763071BE7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7D4C2A91-3689-CC04-4D4D-62763071BE7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D4C2A91-3689-CC04-4D4D-62763071BE7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D4C2A91-3689-CC04-4D4D-62763071BE7A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ADD49ED3-2B1D-E05F-EFB7-C3E4A9BDA5AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ADD49ED3-2B1D-E05F-EFB7-C3E4A9BDA5AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ADD49ED3-2B1D-E05F-EFB7-C3E4A9BDA5AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ADD49ED3-2B1D-E05F-EFB7-C3E4A9BDA5AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

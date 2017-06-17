@@ -16,6 +16,7 @@ public class CameraController : MonoBehaviour
     public float sensitivityX;
     public float sensitivityY;
     public float smoothing;
+    public PlayerController controller;
     //Private variables
     private float currentDistance = 0.0f;
     private float distToCol = Mathf.Infinity;
@@ -38,6 +39,10 @@ public class CameraController : MonoBehaviour
         if (Input.GetButtonDown("Zoom"))
         {
             zoom();
+        }
+        if (Input.GetButtonDown("Target"))
+        {
+            aim();
         }
         currentY = Mathf.Clamp(currentY, Y_ANGLE_MIN, Y_ANGLE_MAX);
     }
@@ -65,6 +70,18 @@ public class CameraController : MonoBehaviour
         {
             distance = MIN_ZOOM;
         }
+    }
+
+    private void aim()
+    {
+        if (!controller.isTargeting)
+        {
+            controller.isTargeting = true;
+        } else
+        {
+            controller.isTargeting = false;
+        }
+        
     }
 
     private bool toCamera()
